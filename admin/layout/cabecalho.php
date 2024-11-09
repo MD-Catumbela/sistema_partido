@@ -54,15 +54,11 @@
             <!-- FUNÇÃO -->
             <a href="<?= APP_URL; ?>" class="brand-link text-left" style="display: block;">
                 <span class="brand-text font-weight-light text-lg">
-                    <i class="fas fa-user"></i>
-                    <b>Usuário: </b>
-                    <span class="text-warning"><b><?= $nome; ?></b></span>
+                    <i class="fas fa-user"></i>  <b><?= $nome; ?></b>
                 </span>
                 <br>
                 <span class="brand-text font-weight-light text-lg">
-                    <i class="fas fa-lock"></i>
-                    <b>Nível: </b>
-                    <span class="text-warning"><b><?= $nivel; ?></b></span>
+                    <i class="fas fa-lock"></i>  <b><?= $nivel; ?></b>
                 </span>
             </a>
             <!-- FIM FUNÇÃO -->

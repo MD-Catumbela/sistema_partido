@@ -19,14 +19,36 @@ include('../app/controllers/comites/lista_comite.php');
                     <div class="content">
                         <!-- QUANTIDADE -->
                         <div class="row">
+                            <!--PESQUISA -->
+                            <div class="col-lg-4 col-6">
+                                <div class="small-box bg-dark">
+                                    <div class="inner">
+                                        <!-- Formulário de seleção de comitê -->
+                                        <form method="POST" action="">
+                                            <label for="select_comite">Selecione o Comitê:</label>
+                                            <select id="select_comite" name="id_comite" class="form-control" onchange="this.form.submit()">
+                                                <option value="">Escolha um comitê</option>
+                                                <?php foreach ($dados_comites as $dado_comite): ?>
+                                                    <option value="<?= $dado_comite['id_comite'] ?>"
+                                                        <?= isset($_POST['id_comite']) && $_POST['id_comite'] == $dado_comite['id_comite'] ? 'selected' : '' ?>>
+                                                        <?= $dado_comite['comite'] ?>
+                                                    </option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </form>
+                                    </div>                                 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <!-- CAP -->
                             <div class="col-lg-4 col-6">
                                 <div class="small-box bg-warning">
                                     <div class="inner">
                                         <!-- Formulário de seleção de comitê -->
                                         <form method="POST" action="">
-                                            <label for="select_comite">Selecione o Comitê:</label>
-                                            <select id="select_comite" name="id_comite" class="form-control" onchange="this.form.submit()">
+                                            <label for="select_comite">Comitê de Acção do Sector</label>
+                                            <select id="select_comite" name="id_comite" class="form-control" onchange="this.form.submit()" hidden>
                                                 <option value="">Escolha um comitê</option>
                                                 <?php foreach ($dados_comites as $dado_comite): ?>
                                                     <option value="<?= $dado_comite['id_comite'] ?>"
@@ -51,7 +73,7 @@ include('../app/controllers/comites/lista_comite.php');
                                         ?>
                                         <!-- Exibição da contagem -->
                                         <h3><?= $contador_cas ?></h3>
-                                        <p>CAS do Comitê</p>
+                                        <p>CAS</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-project-diagram"></i>
@@ -62,7 +84,6 @@ include('../app/controllers/comites/lista_comite.php');
                                     </a>
                                 </div>
                             </div>
-
                             <!--  CAPS -->
                             <div class="col-lg-4 col-6">
                                 <div class="small-box bg-black">
@@ -109,8 +130,6 @@ include('../app/controllers/comites/lista_comite.php');
                                     </a>
                                 </div>
                             </div>
-
-
                             <!--  MILITANTES -->
                             <div class="col-lg-4 col-6">
                                 <div class="small-box bg-red">
@@ -331,10 +350,10 @@ include('../app/controllers/comites/lista_comite.php');
                         </div>
 
                         <!--SECTORES-->
-                       
 
-   
-                       
+
+
+
                         <!--AA-->
                     </div>
                 </div>

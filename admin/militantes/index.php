@@ -1,6 +1,7 @@
 <?php
 include('../../app/config.php');
 include('../../admin/layout/sessao.php');
+include('../../admin/layout/permissao.php');
 include('../../admin/layout/cabecalho.php');
 include('../../app/controllers/militantes/lista_militantes.php');
 ?>
@@ -47,8 +48,9 @@ include('../../app/controllers/militantes/lista_militantes.php');
                                                 <td style="width: 8%;text-align: center;">
                                                     <div class="btn-group">
                                                         <a href="show.php?id=<?= $id_militante; ?>" class="btn btn-primary"><i class="fas fa-eye"></i></a>
-                                                        <a href="imprimir.php?id=<?= $id_militante; ?>" class="btn btn-dark"><i class="fas fa-print"></i></a>
                                                         <a href="update.php?id=<?= $id_militante; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                                                        <a href="imprimir.php?id=<?= $id_militante; ?>" class="btn btn-dark"><i class="fas fa-print"></i></a>
+                                                        <a href="quota.php?id=<?= $id_militante; ?>" class="btn btn-success"><i class="fas fa-money-bill-alt"></i></a>
                                                         <a href="delete.php?id=<?= $id_militante; ?>" class="btn btn-danger "><i class="fas fa-trash-alt"></i></a>
                                                     </div>
                                                 </td>

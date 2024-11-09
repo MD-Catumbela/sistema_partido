@@ -1,6 +1,7 @@
 <?php
 include('../../app/config.php');
 include('../../admin/layout/sessao.php');
+include('../../admin/layout/permissao.php');
 include('../../admin/layout/cabecalho.php');
 include('../../app/controllers/niveis/lista_niveis.php');
 include('../../app/controllers/cas/lista_cas.php');
@@ -43,14 +44,14 @@ include('../../app/controllers/comites/lista_comite.php');
                                     </div>
                                 </div>
                             </div>
-                            <!-- OMA -->
+                            <!-- FUNCÕES -->
                             <div class="col-12 col-sm-6 col-md-4">
                                 <div class="info-box mb-3">
-                                    <img src="<?= APP_URL; ?>/public/img/oma.png" alt="JMPLA" class="brand-image img-circle elevation-3" style="opacity: .8, width: 110px; height: 100px;">
+                                    <img src="<?= APP_URL; ?>/public/img/nivel_seguranca.png" alt="JMPLA" class="brand-image img-circle elevation-3" style="opacity: .8, width: 110px; height: 100px;">
                                     <div class="info-box-content">
-                                        <span class="info-box-text">
+                                    <span class="info-box-text">
                                             <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;">Funções</font>
+                                                <a href="<?= APP_URL; ?>/admin/funcoes" style="vertical-align: inherit;">Funções</a>
                                             </font>
                                         </span>
                                         <span class="info-box-number">
@@ -74,7 +75,7 @@ include('../../app/controllers/comites/lista_comite.php');
                                     <div class="info-box-content">
                                         <span class="info-box-text">
                                             <font style="vertical-align: inherit;">
-                                                <a href="<?= APP_URL; ?>/niveis" style="vertical-align: inherit;">Nível de Segurança</a>
+                                                <a href="<?= APP_URL; ?>/admin/niveis" style="vertical-align: inherit;">Nível de Segurança</a>
                                             </font>
                                         </span>
                                         <span class="info-box-number">

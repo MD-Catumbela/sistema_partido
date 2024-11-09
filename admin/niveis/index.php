@@ -1,6 +1,7 @@
 <?php
 include('../../app/config.php');
 include('../../admin/layout/sessao.php');
+include('../../admin/layout/permissao.php');
 include('../../admin/layout/cabecalho.php');
 include('../../app/controllers/niveis/lista_niveis.php');
 

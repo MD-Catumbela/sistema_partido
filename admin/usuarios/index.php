@@ -2,6 +2,7 @@
 
 include('../../app/config.php');
 include('../../admin/layout/sessao.php');
+include('../../admin/layout/permissao.php');
 include('../../admin/layout/cabecalho.php');
 include('../../app/controllers/usuarios/lista_usuarios.php');
 
