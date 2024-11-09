@@ -8,7 +8,6 @@ include('../../app/controllers/cap/lista_cap.php');
 include('../../app/controllers/comites/lista_comite.php');
 include('../../app/controllers/funcoes/lista_funcoes.php');
 ?>
-<!-- CORPO DO CODIGO -->
 <div class="content-wrapper" style="background-color: #fff;">
     <div class="content-header">
         <div class="content">
@@ -20,7 +19,6 @@ include('../../app/controllers/funcoes/lista_funcoes.php');
                                 <h3 class="card-title"><b>Dados do Militante</b></h3>
                             </div>
                             <div class="card-body" style="display: block;">
-
                                 <!-- DADOS PESSOAIS -->
                                 <div class="row">
                                     <div class="col-md-9">
@@ -257,7 +255,6 @@ include('../../app/controllers/funcoes/lista_funcoes.php');
         </div>
     </div>
 </div>
-<!-- FIM CORPO DO CODIGO -->
 <?php
 include('../../layout/mensagens.php');
 include('../../admin/layout/rodape.php');

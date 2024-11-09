@@ -13,4 +13,3 @@ foreach ($dados_cap as $dado_cap) {
     $id_comite = $dado_cap['id_comite'];
     $comite = $dado_cap['comite'];
 }
-

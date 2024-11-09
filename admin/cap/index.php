@@ -5,8 +5,6 @@ include('../../admin/layout/permissao.php');
 include('../../admin/layout/cabecalho.php');
 include('../../app/controllers/cap/lista_cap.php');
 ?>
-
-<!-- CORPO DO CODIGO -->
 <div class="content-wrapper" style="background-color: #fff;">
     <div class="content-header">
         <div class="content">
@@ -63,7 +61,6 @@ include('../../app/controllers/cap/lista_cap.php');
         </div>
     </div>
 </div>
-
 <script>
     function confirmDelete(url) {
         Swal.fire({
@@ -77,17 +74,15 @@ include('../../app/controllers/cap/lista_cap.php');
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = url; // Redireciona para o link de exclusão
+                window.location.href = url;
             }
         });
     }
 </script>
-<!-- FIM CORPO DO CODIGO -->
 <?php
 include('../../layout/mensagens.php');
 include('../../admin/layout/rodape.php');
 ?>
-
 <script>
     $(function() {
         $("#example1").DataTable({

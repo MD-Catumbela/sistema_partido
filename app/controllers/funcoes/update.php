@@ -1,6 +1,5 @@
 <?php
 include('../../config.php');
-
 $funcao = $_POST['funcao'];
 $id_funcao = $_POST['id_funcao'];
 
@@ -17,7 +16,6 @@ $sql = 'UPDATE tb_funcoes
                     d_actualizacao = :d_actualizacao
                 WHERE id_funcao = :id_funcao';
 $sentencia = $pdo->prepare($sql);
-
 $sentencia->bindParam(':funcao', $funcao);
 $sentencia->bindParam(':d_actualizacao', $data_hora);
 $sentencia->bindParam(':id_funcao', $id_funcao);

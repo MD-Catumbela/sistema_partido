@@ -1,5 +1,4 @@
 <?php
-
 $id_funcao_get = $_GET['id'];
 
 $sql_funcoes = "SELECT * FROM tb_funcoes WHERE id_funcao='$id_funcao_get'";

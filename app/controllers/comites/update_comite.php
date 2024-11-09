@@ -1,5 +1,4 @@
 <?php
-
 $id_comite_get = $_GET['id'];
 
 $sql_comites = "SELECT * FROM tb_comites WHERE id_comite='$id_comite_get'";

@@ -1,11 +1,9 @@
 <?php
 include('../../config.php');
-
 $cas = $_POST['cas'];
 $id_comite = $_POST['id_comite'];
 
-$sentencia = $pdo->prepare('INSERT INTO tb_cas (cas,id_comite, d_criacao)
-                                VALUES (:cas,:id_comite, :d_criacao)');
+$sentencia = $pdo->prepare('INSERT INTO tb_cas (cas,id_comite, d_criacao) VALUES (:cas,:id_comite, :d_criacao)');
 
 $sentencia->bindParam(':cas', $cas);
 $sentencia->bindParam(':id_comite', $id_comite);

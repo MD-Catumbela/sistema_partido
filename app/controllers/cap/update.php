@@ -12,12 +12,7 @@ if (trim($cap) === "") {
     header('Location:' . APP_URL . "/cap/create.php?id=" . $id_cap);
 }
 
-$sql = 'UPDATE tb_caps
-                SET
-                    cap = :cap,
-                    id_comite=:id_comite,
-                    d_actualizacao = :d_actualizacao
-                WHERE id_cap = :id_cap';
+$sql = 'UPDATE tb_caps SET cap = :cap, id_comite=:id_comite, d_actualizacao = :d_actualizacao WHERE id_cap = :id_cap';
 $sentencia = $pdo->prepare($sql);
 
 $sentencia->bindParam(':cap', $cap);

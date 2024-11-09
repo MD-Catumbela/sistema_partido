@@ -4,16 +4,14 @@ include('../../admin/layout/sessao.php');
 include('../../admin/layout/permissao.php');
 include('../../admin/layout/cabecalho.php');
 include('../../app/controllers/cas/lista_cas.php');
-
 ?>
-<!-- CORPO DO CODIGO -->
 <div class="content-wrapper" style="background-color: #fff;">
     <div class="content-header">
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                    <div class="card card-outline card-primary">
+                        <div class="card card-outline card-primary">
                             <div class="card-header">
                                 <h3 class="card-title"><b>Comité de Acção do Sector</b></h3>
                                 <div class="card-tools">
@@ -30,7 +28,7 @@ include('../../app/controllers/cas/lista_cas.php');
                                             <th>Comité de Acção do Sector</th>
                                             <th>Comité</th>
                                             <th>
-                                            <center>Acções<center>
+                                                <center>Acções<center>
                                             </th>
                                         </tr>
                                     </thead>
@@ -56,14 +54,13 @@ include('../../app/controllers/cas/lista_cas.php');
                                     </tbody>
                                 </table>
                             </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <script>
     function confirmDelete(url) {
         Swal.fire({
@@ -77,17 +74,15 @@ include('../../app/controllers/cas/lista_cas.php');
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = url; // Redireciona para o link de exclusão
+                window.location.href = url;
             }
         });
     }
 </script>
-<!-- FIM CORPO DO CODIGO -->
 <?php
 include('../../layout/mensagens.php');
 include('../../admin/layout/rodape.php');
 ?>
-
 <script>
     $(function() {
         $("#example1").DataTable({

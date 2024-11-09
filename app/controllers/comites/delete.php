@@ -1,6 +1,5 @@
 <?php
 include('../../../app/config.php');
-
 if (isset($_GET['id'])) {
     $id_comite = $_GET['id'];
 

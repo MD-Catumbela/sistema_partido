@@ -7,8 +7,6 @@ include('../../app/controllers/cas/lista_cas.php');
 include('../../app/controllers/funcoes/lista_funcoes.php');
 include('../../app/controllers/comites/lista_comite.php');
 ?>
-
-<!-- CORPO DO CODIGO -->
 <div class="content-wrapper" style="background-color: #fff;">
     <div class="content-header">
         <div class="content">
@@ -58,23 +56,18 @@ include('../../app/controllers/comites/lista_comite.php');
                                                         <input type="text" name="bi" class="form-control" required maxlength="14" pattern=".{14}" title="O número do B.I deve ter exatamente 14 dígitos">
                                                     </div>
                                                 </div>
-
-
-
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label for="d_nascimento">Data Nascimento</label>
                                                         <input type="date" name="d_nascimento" id="d_nascimento" class="form-control" required>
                                                     </div>
                                                 </div>
-
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label for="idade">Idade</label>
                                                         <input type="number" name="idade" id="idade" class="form-control" required readonly>
                                                     </div>
                                                 </div>
-
                                                 <script>
                                                     document.getElementById("d_nascimento").addEventListener("change", function() {
                                                         const dataNascimento = new Date(this.value);
@@ -91,7 +84,6 @@ include('../../app/controllers/comites/lista_comite.php');
                                                         document.getElementById("idade").value = idade >= 0 ? idade : 0;
                                                     });
                                                 </script>
-
                                                 <div class="col-md-7">
                                                     <div class="form-group">
                                                         <label for="endereco">Residência</label>
@@ -171,12 +163,9 @@ include('../../app/controllers/comites/lista_comite.php');
                                     </div>
                                     <!-- DADOS DO PARTIDO -->
                                     <hr>
-
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row">
-
-
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label for="id_comite">Comité</label>
@@ -187,8 +176,6 @@ include('../../app/controllers/comites/lista_comite.php');
                                                         </select>
                                                     </div>
                                                 </div>
-
-
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label for="organizacao">Organização</label>
@@ -199,7 +186,6 @@ include('../../app/controllers/comites/lista_comite.php');
                                                         </select>
                                                     </div>
                                                 </div>
-
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label for="id_cap">CAP</label>
@@ -210,7 +196,6 @@ include('../../app/controllers/comites/lista_comite.php');
                                                         </select>
                                                     </div>
                                                 </div>
-
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label for="id_cas">CAS</label>
@@ -221,25 +206,18 @@ include('../../app/controllers/comites/lista_comite.php');
                                                         </select>
                                                     </div>
                                                 </div>
-
-
-
-
-
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label for="d_ingresso">Data Ingresso</label>
                                                         <input type="date" name="d_ingresso" id="d_ingresso" class="form-control" required>
                                                     </div>
                                                 </div>
-
                                                 <div class="col-md-1">
                                                     <div class="form-group">
                                                         <label for="anos">Anos</label>
                                                         <input type="number" name="anos" id="anos" class="form-control" required readonly>
                                                     </div>
                                                 </div>
-
                                                 <script>
                                                     document.getElementById("d_ingresso").addEventListener("change", function() {
                                                         const dataIngresso = new Date(this.value);
@@ -256,7 +234,6 @@ include('../../app/controllers/comites/lista_comite.php');
                                                         document.getElementById("anos").value = anos >= 0 ? anos : 0;
                                                     });
                                                 </script>
-
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label for="id_funcao">Função</label>
@@ -267,15 +244,12 @@ include('../../app/controllers/comites/lista_comite.php');
                                                         </select>
                                                     </div>
                                                 </div>
-
                                                 <div class="col-md-2">
                                                     <div class="form-group">
                                                         <label for="n_cartao">Nº Cartão</label>
                                                         <input type="text" name="n_cartao" class="form-control" required>
                                                     </div>
                                                 </div>
-
-
                                                 <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label for="n_cartao">Usuário</label>
@@ -284,15 +258,9 @@ include('../../app/controllers/comites/lista_comite.php');
                                                         <input type="hidden" name="id_usuario" value="<?= $id_usuario; ?>">
                                                     </div>
                                                 </div>
-
-
-
-
                                             </div>
                                         </div>
                                     </div>
-
-
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -314,7 +282,6 @@ include('../../app/controllers/comites/lista_comite.php');
         </div>
     </div>
 </div>
-<!-- FIM CORPO DO CODIGO -->
 <?php
 include('../../layout/mensagens.php');
 include('../../admin/layout/rodape.php');

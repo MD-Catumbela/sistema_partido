@@ -4,9 +4,7 @@ include('../../admin/layout/sessao.php');
 include('../../admin/layout/permissao.php');
 include('../../admin/layout/cabecalho.php');
 include('../../app/controllers/funcoes/lista_funcoes.php');
-
 ?>
-<!-- CORPO DO CODIGO -->
 <div class="content-wrapper" style="background-color: #fff;"> 
     <div class="content-header">
         <div class="content">
@@ -16,7 +14,6 @@ include('../../app/controllers/funcoes/lista_funcoes.php');
                         <div class="card card-outline card-primary">
                             <div class="card-header">
                                 <h3 class="card-title"><b>Funções</b></h3>
-
                                 <div class="card-tools">
                                     <a href="create.php" class="btn btn-primary"><i class="fas fa-user-cog"></i> Adicionar</a>
                                 </div>
@@ -76,18 +73,15 @@ include('../../app/controllers/funcoes/lista_funcoes.php');
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = url; // Redireciona para o link de exclusão
+            window.location.href = url; 
         }
     });
 }
-
 </script>
-<!-- FIM CORPO DO CODIGO -->
 <?php
 include('../../layout/mensagens.php');
 include('../../admin/layout/rodape.php');
 ?>
-
 <script>
     $(function() {
         $("#example1").DataTable({

@@ -8,7 +8,6 @@ include('../../app/controllers/cas/lista_cas.php');
 include('../../app/controllers/comites/lista_comite.php');
 include('../../app/controllers/funcoes/lista_funcoes.php');
 ?>
-<!-- CORPO DO CODIGO -->
 <div class="content-wrapper" style="background-color: #fff;">
     <div class="content-header">
         <div class="content">
@@ -261,7 +260,6 @@ include('../../app/controllers/funcoes/lista_funcoes.php');
         </div>
     </div>
 </div>
-<!-- FIM CORPO DO CODIGO -->
 <?php
 include('../../admin/layout/rodape.php');
 ?>

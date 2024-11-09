@@ -23,7 +23,6 @@ include('../app/controllers/comites/lista_comite.php');
                             <div class="col-lg-4 col-6">
                                 <div class="small-box bg-dark">
                                     <div class="inner">
-                                        <!-- Formulário de seleção de comitê -->
                                         <form method="POST" action="">
                                             <label for="select_comite">Selecione o Comitê:</label>
                                             <select id="select_comite" name="id_comite" class="form-control" onchange="this.form.submit()">
@@ -45,7 +44,6 @@ include('../app/controllers/comites/lista_comite.php');
                             <div class="col-lg-4 col-6">
                                 <div class="small-box bg-warning">
                                     <div class="inner">
-                                        <!-- Formulário de seleção de comitê -->
                                         <form method="POST" action="">
                                             <label for="select_comite">Comitê de Acção do Sector</label>
                                             <select id="select_comite" name="id_comite" class="form-control" onchange="this.form.submit()" hidden>
@@ -59,11 +57,9 @@ include('../app/controllers/comites/lista_comite.php');
                                             </select>
                                         </form>
                                         <?php
-                                        // Contagem de registros para o comitê selecionado
                                         $contador_cas = 0;
                                         if (isset($_POST['id_comite']) && !empty($_POST['id_comite'])) {
                                             $id_comite = $_POST['id_comite'];
-                                            // Consulta SQL para contar os registros na tabela tb_cas para o comitê selecionado
                                             $query = "SELECT COUNT(*) AS total FROM tb_cas WHERE id_comite = ?";
                                             $stmt = $pdo->prepare($query);
                                             $stmt->execute([$id_comite]);
@@ -71,14 +67,12 @@ include('../app/controllers/comites/lista_comite.php');
                                             $contador_cas = $resultado['total'];
                                         }
                                         ?>
-                                        <!-- Exibição da contagem -->
                                         <h3><?= $contador_cas ?></h3>
                                         <p>CAS</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-project-diagram"></i>
                                     </div>
-                                    <!-- Link para mais informações -->
                                     <a href="<?= APP_URL; ?>/admin/cas" class="small-box-footer">
                                         Mais informações <i class="fas fa-arrow-circle-right"></i>
                                     </a>
@@ -88,7 +82,6 @@ include('../app/controllers/comites/lista_comite.php');
                             <div class="col-lg-4 col-6">
                                 <div class="small-box bg-black">
                                     <div class="inner">
-                                        <!-- Formulário de seleção de comitê -->
                                         <form method="POST" action="">
                                             <label for="select_comite_cap">Comité de Acção do Partido</label>
                                             <select id="select_comite_cap" name="id_comite" class="form-control" onchange="this.form.submit()" hidden>
@@ -115,7 +108,6 @@ include('../app/controllers/comites/lista_comite.php');
                                             $contador_cap = $resultado['total'];
                                         }
                                         ?>
-                                        <!-- Exibição da contagem -->
                                         <h3><?= $contador_cap ?></h3>
                                         <p>CAP</p>
                                     </div>
@@ -124,7 +116,6 @@ include('../app/controllers/comites/lista_comite.php');
                                         <i class="fas fa-layer-group text-white"></i>
                                     </div>
 
-                                    <!-- Link para mais informações -->
                                     <a href="<?= APP_URL; ?>/admin/cap" class="small-box-footer">
                                         Mais informações <i class="fas fa-arrow-circle-right"></i>
                                     </a>
@@ -134,7 +125,6 @@ include('../app/controllers/comites/lista_comite.php');
                             <div class="col-lg-4 col-6">
                                 <div class="small-box bg-red">
                                     <div class="inner">
-                                        <!-- Formulário de seleção de comitê -->
                                         <form method="POST" action="">
                                             <label for="select_comite_militante">Militantes do Partido</label>
                                             <select id="select_comite_militante" name="id_comite" class="form-control" onchange="this.form.submit()" hidden>
@@ -161,27 +151,20 @@ include('../app/controllers/comites/lista_comite.php');
                                             $contador_militante = $resultado['total'];
                                         }
                                         ?>
-                                        <!-- Exibição da contagem -->
                                         <h3><?= $contador_militante ?></h3>
                                         <p>Militantes</p>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-users text-white"></i>
                                     </div>
-                                    <!-- Link para mais informações -->
                                     <a href="<?= APP_URL; ?>/admin/militantes" class="small-box-footer">
                                         Mais informações <i class="fas fa-arrow-circle-right"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-
-
                         <!--  RESERVA -->
                         <div class="row">
-
-                            <!-- XXXXX-->
-
                             <!-- MPLA-->
                             <form method="POST" action="">
                                 <label for="select_comite"></label>
@@ -194,7 +177,6 @@ include('../app/controllers/comites/lista_comite.php');
                                     <?php endforeach; ?>
                                 </select>
                             </form>
-                            <!-- Exibição de Militantes por Comitê -->
                             <div class="col-12 col-sm-6 col-md-4">
                                 <div class="info-box mb-3">
                                     <img src="<?= APP_URL; ?>/public/img/mpla.jpg" alt="JMPLA" class="brand-image img-circle elevation-3" style="opacity: .8, width: 100px; height: 100px;">
@@ -206,15 +188,10 @@ include('../app/controllers/comites/lista_comite.php');
                                         </span>
                                         <span class="info-box-number">
                                             <?php
-                                            // Inicializando os contadores
                                             $contador_masculino = 0;
                                             $contador_feminino = 0;
-
-                                            // Verificando se o filtro de comitê está ativo
                                             if (isset($_POST['id_comite']) && !empty($_POST['id_comite'])) {
                                                 $id_comite = $_POST['id_comite'];
-
-                                                // Consulta para filtrar militantes por comitê
                                                 foreach ($dados_militantes as $dado_militante) {
                                                     if ($dado_militante['id_comite'] == $id_comite) {
                                                         if ($dado_militante['genero'] == 'M') {
@@ -243,12 +220,10 @@ include('../app/controllers/comites/lista_comite.php');
                                     </div>
                                 </div>
                             </div>
-
                             <!-- OMA -->
                             <div class="col-12 col-sm-6 col-md-4">
                                 <div class="info-box mb-3">
                                     <img src="<?= APP_URL; ?>/public/img/oma.png" alt="OMA" class="brand-image img-circle elevation-3" style="opacity: .8, width: 110px; height: 100px;">
-
                                     <div class="info-box-content">
                                         <span class="info-box-text">
                                             <font style="vertical-align: inherit;">

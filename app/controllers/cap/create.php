@@ -1,6 +1,5 @@
 <?php
 include('../../config.php');
-
 $cap = $_POST['cap'];
 $id_comite = $_POST['id_comite'];
 

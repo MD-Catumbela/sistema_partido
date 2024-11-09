@@ -1,5 +1,4 @@
 <?php
-
 $id_cap_get = $_GET['id'];
 
 $sql_cap = "SELECT *, cap.id_cap as id_cap, comite.id_comite as id_comite

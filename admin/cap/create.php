@@ -4,7 +4,6 @@ include('../../admin/layout/sessao.php');
 include('../../admin/layout/cabecalho.php');
 include('../../app/controllers/comites/lista_comite.php');
 ?>
-<!-- CORPO DO CODIGO -->
 <div class="content-wrapper" style="background-color: #fff;">
     <div class="content-header">
         <div class="content">
@@ -24,7 +23,6 @@ include('../../app/controllers/comites/lista_comite.php');
                                                 <input type="text" name="cap" class="form-control" required>
                                             </div>
                                         </div>
-
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="">Comité</label>
@@ -40,8 +38,7 @@ include('../../app/controllers/comites/lista_comite.php');
                                                     <a href="<?= APP_URL; ?>/admin/comites/create.php" class="btn btn-primary"><i class="fas fa-plus"></i></a>
                                                 </div>
                                             </div>
-                                        </div>
-                                       
+                                        </div>                  
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
@@ -64,7 +61,6 @@ include('../../app/controllers/comites/lista_comite.php');
         </div>
     </div>
 </div>
-<!-- FIM CORPO DO CODIGO -->
 <?php
 include('../layout/mensagens.php');
 include('../layout/rodape.php');

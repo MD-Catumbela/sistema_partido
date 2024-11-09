@@ -1,6 +1,5 @@
 <?php
 include('../../config.php');
-
 $comite = strtoupper($_POST['comite']);
 $municipio = strtoupper($_POST['municipio']);
 $provincia = strtoupper($_POST['provincia']);

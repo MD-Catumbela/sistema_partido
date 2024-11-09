@@ -5,14 +5,13 @@ include('../../admin/layout/cabecalho.php');
 include('../../app/controllers/cas/lista_cas.php');
 include('../../app/controllers/comites/lista_comite.php');
 ?>
-<!-- CORPO DO CODIGO -->
 <div class="content-wrapper" style="background-color: #fff;">
     <div class="content-header">
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md">
-                    <div class="card card-success">
+                        <div class="card card-success">
                             <div class="card-header">
                                 <h3 class="card-title"><b>Actualizar Comité de Acção do Sector</b></h3>
                             </div>
@@ -45,7 +44,6 @@ include('../../app/controllers/comites/lista_comite.php');
                                                 </div>
                                             </div>
                                         </div>
-                                        
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
@@ -68,7 +66,6 @@ include('../../app/controllers/comites/lista_comite.php');
         </div>
     </div>
 </div>
-<!-- FIM CORPO DO CODIGO -->
 <?php
 include('../../layout/mensagens.php');
 include('../../admin/layout/rodape.php');

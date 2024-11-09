@@ -5,7 +5,6 @@ include('../../admin/layout/permissao.php');
 include('../../admin/layout/cabecalho.php');
 include('../../app/controllers/militantes/lista_militantes.php');
 ?>
-<!-- CORPO DO CODIGO -->
 <div class="content-wrapper" style="background-color: #fff;">
     <div class="content-header">
         <div class="content">
@@ -66,12 +65,10 @@ include('../../app/controllers/militantes/lista_militantes.php');
         </div>
     </div>
 </div>
-<!-- FIM CORPO DO CODIGO -->
 <?php
 include('../../layout/mensagens.php');
 include('../../admin/layout/rodape.php');
 ?>
-
 <script>
     $(function() {
         $("#example1").DataTable({

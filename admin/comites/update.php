@@ -3,9 +3,7 @@ include('../../app/config.php');
 include('../../admin/layout/sessao.php');
 include('../../admin/layout/cabecalho.php');
 include('../../app/controllers/comites/update_comite.php');
-
 ?>
-<!-- CORPO DO CODIGO -->
 <div class="content-wrapper" style="background-color: #fff;">
     <div class="content-header">
         <div class="content">
@@ -106,7 +104,6 @@ include('../../app/controllers/comites/update_comite.php');
         </div>
     </div>
 </div>
-<!-- FIM CORPO DO CODIGO -->
 <?php
 include('../../layout/mensagens.php');
 include('../../admin/layout/rodape.php');

@@ -9,7 +9,6 @@ include('../../app/controllers/cap/lista_cap.php');
 include('../../app/controllers/funcoes/lista_funcoes.php');
 include('../../app/controllers/comites/lista_comite.php');
 ?>
-<!-- CORPO DO CODIGO -->
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
@@ -152,7 +151,6 @@ include('../../app/controllers/comites/lista_comite.php');
         </div>
     </div>
 </div>
-<!-- FIM CORPO DO CODIGO -->
 <script>
     function confirmDelete(url) {
         Swal.fire({
@@ -171,12 +169,10 @@ include('../../app/controllers/comites/lista_comite.php');
         });
     }
 </script>
-<!-- FIM CORPO DO CODIGO -->
 <?php
 include('../../layout/mensagens.php');
 include('../../admin/layout/rodape.php');
 ?>
-
 <script>
     $(function() {
         $("#example1").DataTable({

@@ -10,7 +10,7 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="<?= APP_URL; ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?= APP_URL; ?>/public/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?= APP_URL; ?>/public/css/adminlte.min.css">
     <!-- Sweetalert2 -->
     <script src="<?= APP_URL; ?>/public/js/sweetalert2@11.js"></script>
     <!-- DataTables -->
@@ -87,9 +87,6 @@
                                 <p><strong>Funções</strong></p>
                             </a>
                         </li>
-                      
-                        
-
                         <!-- SECTORES -->
                         <li class="nav-item">
                             <a href="<?= APP_URL; ?>/admin/cas" class="nav-link active bg-warning text-white">
