@@ -3,13 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04/11/2024 às 00:04
+-- Tempo de geração: 09/11/2024 às 19:03
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tb_caps` (
   `id_cap` int(11) NOT NULL,
   `cap` varchar(255) NOT NULL,
-  `id_cas` int(11) DEFAULT NULL,
+  `id_comite` int(11) DEFAULT NULL,
   `d_criacao` datetime DEFAULT NULL,
   `d_actualizacao` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -38,10 +39,9 @@ CREATE TABLE `tb_caps` (
 -- Despejando dados para a tabela `tb_caps`
 --
 
-INSERT INTO `tb_caps` (`id_cap`, `cap`, `id_cas`, `d_criacao`, `d_actualizacao`) VALUES
-(18, '121', 19, '2024-10-30 08:25:19', NULL),
-(19, '10000', 21, '2024-10-30 22:25:44', NULL),
-(20, '110', 20, '2024-10-30 12:16:38', NULL);
+INSERT INTO `tb_caps` (`id_cap`, `cap`, `id_comite`, `d_criacao`, `d_actualizacao`) VALUES
+(1, '121', 1, '2024-11-07 15:11:58', NULL),
+(2, '1', 6, '2024-11-07 15:12:14', NULL);
 
 -- --------------------------------------------------------
 
@@ -52,6 +52,7 @@ INSERT INTO `tb_caps` (`id_cap`, `cap`, `id_cas`, `d_criacao`, `d_actualizacao`)
 CREATE TABLE `tb_cas` (
   `id_cas` int(11) NOT NULL,
   `cas` varchar(255) NOT NULL,
+  `id_comite` int(11) DEFAULT NULL,
   `d_criacao` datetime DEFAULT NULL,
   `d_actualizacao` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -60,11 +61,9 @@ CREATE TABLE `tb_cas` (
 -- Despejando dados para a tabela `tb_cas`
 --
 
-INSERT INTO `tb_cas` (`id_cas`, `cas`, `d_criacao`, `d_actualizacao`) VALUES
-(19, 'SECTOR 3', '2024-10-29 23:31:32', '2024-10-30 08:40:23'),
-(20, 'SECTOR 1', '2024-10-30 12:14:34', NULL),
-(21, 'SECTOR 2', '2024-10-30 12:14:50', NULL),
-(22, 'SECTOR 4', '2024-10-30 12:15:04', NULL);
+INSERT INTO `tb_cas` (`id_cas`, `cas`, `id_comite`, `d_criacao`, `d_actualizacao`) VALUES
+(1, 'SECTOR 1', 6, '2024-11-07 15:15:38', NULL),
+(2, 'SECTOR 3', 1, '2024-11-07 15:15:49', NULL);
 
 -- --------------------------------------------------------
 
@@ -87,7 +86,8 @@ CREATE TABLE `tb_comites` (
 
 INSERT INTO `tb_comites` (`id_comite`, `comite`, `municipio`, `provincia`, `d_criacao`, `d_actualizacao`) VALUES
 (1, 'GAMA', 'CATUMBELA', 'BENGUELA', '2024-11-03 22:21:18', NULL),
-(2, 'BIOPIO', 'CATUMBELA', 'BENGUELA', '2024-11-03 22:57:59', '2024-11-03 23:22:45');
+(2, 'BIOPIO', 'CATUMBELA', 'BENGUELA', '2024-11-03 22:57:59', '2024-11-03 23:22:45'),
+(6, 'CATUMBELA CEDE', 'CATUMBELA', 'BENGUELA', '2024-11-04 14:17:09', NULL);
 
 -- --------------------------------------------------------
 
@@ -107,7 +107,7 @@ CREATE TABLE `tb_funcoes` (
 --
 
 INSERT INTO `tb_funcoes` (`id_funcao`, `funcao`, `d_criacao`, `d_actualizacao`) VALUES
-(1, '1ª Secre.', '2024-11-03 19:11:07', NULL);
+(1, '1ª Secretario', '2024-11-03 19:11:07', '2024-11-04 13:55:34');
 
 -- --------------------------------------------------------
 
@@ -117,13 +117,18 @@ INSERT INTO `tb_funcoes` (`id_funcao`, `funcao`, `d_criacao`, `d_actualizacao`) 
 
 CREATE TABLE `tb_militantes` (
   `id_militante` int(11) NOT NULL,
-  `nome` varchar(255) NOT NULL,
+  `nome_mi` varchar(255) NOT NULL,
+  `nome_pai` varchar(255) NOT NULL,
+  `nome_mae` varchar(255) NOT NULL,
   `genero` enum('M','F') NOT NULL,
   `bi` varchar(15) DEFAULT NULL,
   `d_nascimento` date DEFAULT NULL,
   `endereco` varchar(255) DEFAULT NULL,
   `tel` int(10) DEFAULT NULL,
-  `f_academico` varchar(255) DEFAULT NULL,
+  `n_academico` varchar(255) DEFAULT NULL,
+  `especialidade` varchar(255) NOT NULL,
+  `trabalho` varchar(255) NOT NULL,
+  `local_trabalho` varchar(255) NOT NULL,
   `organizacao` varchar(10) DEFAULT NULL,
   `d_ingresso` date DEFAULT NULL,
   `n_cartao` varchar(255) DEFAULT NULL,
@@ -132,6 +137,8 @@ CREATE TABLE `tb_militantes` (
   `id_funcao` int(11) NOT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `id_comite` int(11) DEFAULT NULL,
+  `idade` int(11) NOT NULL,
+  `anos` int(11) NOT NULL,
   `imagen` mediumtext DEFAULT NULL,
   `d_criacao` datetime DEFAULT NULL,
   `d_actualizacao` datetime DEFAULT NULL
@@ -141,8 +148,8 @@ CREATE TABLE `tb_militantes` (
 -- Despejando dados para a tabela `tb_militantes`
 --
 
-INSERT INTO `tb_militantes` (`id_militante`, `nome`, `genero`, `bi`, `d_nascimento`, `endereco`, `tel`, `f_academico`, `organizacao`, `d_ingresso`, `n_cartao`, `id_cap`, `id_cas`, `id_funcao`, `id_usuario`, `id_comite`, `imagen`, `d_criacao`, `d_actualizacao`) VALUES
-(1, 'Hunkuim César', 'M', '123456890BA040', '1995-03-31', 'Bairro do Luongo', 923320645, 'ENSINO MEDIO', 'JMPLA', '2016-11-03', '024AC4', 18, 21, 1, 1, 1, NULL, '2024-11-03 23:29:23', NULL);
+INSERT INTO `tb_militantes` (`id_militante`, `nome_mi`, `nome_pai`, `nome_mae`, `genero`, `bi`, `d_nascimento`, `endereco`, `tel`, `n_academico`, `especialidade`, `trabalho`, `local_trabalho`, `organizacao`, `d_ingresso`, `n_cartao`, `id_cap`, `id_cas`, `id_funcao`, `id_usuario`, `id_comite`, `idade`, `anos`, `imagen`, `d_criacao`, `d_actualizacao`) VALUES
+(1, 'Maria Papagaio César', 'Fernando César', 'Luciana Kangole Lino César', 'F', '005638463BA045', '1998-02-20', 'Luongo - Rua Escola Lúcio Lara', 926598184, 'Licenciatura', 'Engermagem', 'Enfermeira', 'Hospital Municipal da Catumbela', 'JMPLA', '2020-04-01', '00010', 1, 2, 1, 1, 1, 26, 4, '2024-11-07-15-47-03__Maria.jpg', '2024-11-07 15:47:03', '2024-11-07 15:47:03');
 
 -- --------------------------------------------------------
 
@@ -162,16 +169,8 @@ CREATE TABLE `tb_niveis` (
 --
 
 INSERT INTO `tb_niveis` (`id_nivel`, `nivel`, `d_criacao`, `d_actualizacao`) VALUES
-(1, 'Admin', '2024-06-17 10:31:41', '2024-06-20 08:58:45'),
-(2, 'Contabilista', '2024-06-17 10:36:49', NULL),
-(3, 'Secretário', '2024-07-01 09:15:22', NULL),
-(4, 'Gestor de Projetos', '2024-07-05 14:30:10', NULL),
-(5, 'Analista de Sistemas', '2024-07-10 11:40:25', NULL),
-(6, 'Desenvolvedor', '2024-07-15 12:55:05', '2024-07-20 16:45:30'),
-(9, 'Vendedor', '2024-07-30 13:15:12', NULL),
-(10, 'Recursos Humanos', '2024-08-01 09:25:05', NULL),
-(11, 'Marketing', '2024-08-05 14:00:00', NULL),
-(12, 'Suporte Técnico', '2024-08-10 11:35:20', NULL);
+(1, 'Administrador', '2024-06-17 10:31:41', '2024-11-04 12:12:01'),
+(3, 'Secretário', '2024-07-01 09:15:22', NULL);
 
 -- --------------------------------------------------------
 
@@ -194,8 +193,8 @@ CREATE TABLE `tb_usuarios` (
 --
 
 INSERT INTO `tb_usuarios` (`id_usuario`, `nome`, `username`, `password_user`, `id_nivel`, `d_criacao`, `d_actualizacao`) VALUES
-(1, 'Mundo Digital', 'md', '$2y$10$L2sk61Rw4Ja9TSm.APiGvunytA.53XPRqNCsPNDQj5bwes//w1U5y', 1, '2024-06-17 10:31:58', NULL),
-(6, 'Hunkuim César', 'hunkuim', '$2y$10$/2PnqEjolbSoJpWhiNJ6u.OHnUl0dWuMZENcOPo/VR178VOPrbFQq', 3, '2024-10-03 19:11:52', '2024-10-30 10:27:01');
+(1, 'Mundo Digital', 'md', '$2y$10$3zhgWzJbAWStJXiFssACHuWSgAimY9C7nL3On.FW6F5tv/jN48aS6', 1, '2024-06-17 10:31:58', '2024-11-04 12:19:30'),
+(10, 'hunkuim wilton césar', 'hwc', '$2y$10$NDuQZuZ/zkXPJyjmb1.8KubrvzHaViU9sb2PmG2zes1TK1RbiwSeK', 3, '2024-11-04 21:11:30', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -206,13 +205,14 @@ INSERT INTO `tb_usuarios` (`id_usuario`, `nome`, `username`, `password_user`, `i
 --
 ALTER TABLE `tb_caps`
   ADD PRIMARY KEY (`id_cap`),
-  ADD KEY `fk_tb_caps_tb_cas` (`id_cas`);
+  ADD KEY `id_comite` (`id_comite`);
 
 --
 -- Índices de tabela `tb_cas`
 --
 ALTER TABLE `tb_cas`
-  ADD PRIMARY KEY (`id_cas`);
+  ADD PRIMARY KEY (`id_cas`),
+  ADD KEY `id_comite` (`id_comite`);
 
 --
 -- Índices de tabela `tb_comites`
@@ -232,7 +232,7 @@ ALTER TABLE `tb_funcoes`
 --
 ALTER TABLE `tb_militantes`
   ADD PRIMARY KEY (`id_militante`),
-  ADD UNIQUE KEY `nome` (`nome`),
+  ADD UNIQUE KEY `nome` (`nome_mi`),
   ADD KEY `id_cap` (`id_cap`),
   ADD KEY `id_cas` (`id_cas`),
   ADD KEY `id_funcao` (`id_funcao`),
@@ -262,25 +262,25 @@ ALTER TABLE `tb_usuarios`
 -- AUTO_INCREMENT de tabela `tb_caps`
 --
 ALTER TABLE `tb_caps`
-  MODIFY `id_cap` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_cap` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cas`
 --
 ALTER TABLE `tb_cas`
-  MODIFY `id_cas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_cas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tb_comites`
 --
 ALTER TABLE `tb_comites`
-  MODIFY `id_comite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_comite` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `tb_funcoes`
 --
 ALTER TABLE `tb_funcoes`
-  MODIFY `id_funcao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_funcao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tb_militantes`
@@ -292,13 +292,13 @@ ALTER TABLE `tb_militantes`
 -- AUTO_INCREMENT de tabela `tb_niveis`
 --
 ALTER TABLE `tb_niveis`
-  MODIFY `id_nivel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_nivel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de tabela `tb_usuarios`
 --
 ALTER TABLE `tb_usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restrições para tabelas despejadas
@@ -308,17 +308,23 @@ ALTER TABLE `tb_usuarios`
 -- Restrições para tabelas `tb_caps`
 --
 ALTER TABLE `tb_caps`
-  ADD CONSTRAINT `fk_tb_caps_tb_cas` FOREIGN KEY (`id_cas`) REFERENCES `tb_cas` (`id_cas`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `tb_caps_ibfk_1` FOREIGN KEY (`id_comite`) REFERENCES `tb_comites` (`id_comite`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Restrições para tabelas `tb_cas`
+--
+ALTER TABLE `tb_cas`
+  ADD CONSTRAINT `tb_cas_ibfk_1` FOREIGN KEY (`id_comite`) REFERENCES `tb_comites` (`id_comite`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Restrições para tabelas `tb_militantes`
 --
 ALTER TABLE `tb_militantes`
   ADD CONSTRAINT `tb_militantes_ibfk_1` FOREIGN KEY (`id_funcao`) REFERENCES `tb_funcoes` (`id_funcao`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_militantes_ibfk_2` FOREIGN KEY (`id_cap`) REFERENCES `tb_caps` (`id_cap`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_militantes_ibfk_3` FOREIGN KEY (`id_cas`) REFERENCES `tb_cas` (`id_cas`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `tb_militantes_ibfk_4` FOREIGN KEY (`id_usuario`) REFERENCES `tb_usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `tb_militantes_ibfk_5` FOREIGN KEY (`id_comite`) REFERENCES `tb_comites` (`id_comite`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `tb_militantes_ibfk_5` FOREIGN KEY (`id_comite`) REFERENCES `tb_comites` (`id_comite`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_militantes_ibfk_6` FOREIGN KEY (`id_cap`) REFERENCES `tb_caps` (`id_cap`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_militantes_ibfk_7` FOREIGN KEY (`id_cas`) REFERENCES `tb_cas` (`id_cas`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Restrições para tabelas `tb_usuarios`
