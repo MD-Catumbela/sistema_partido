@@ -12,17 +12,17 @@ if (isset($_GET['id'])) {
             session_start();
             $_SESSION['mensagem'] = "Sector Eliminado";
             $_SESSION['icone'] = "success";
-            header('Location:' . APP_URL . "/cas");
+            header('Location:' . APP_URL . "/admin/cas");
         } else {
             session_start();
             $_SESSION['mensagem'] = "Sector Não Eliminado";
             $_SESSION['icone'] = "error";
-            header('Location:' . APP_URL . "/cas");
+            header('Location:' . APP_URL . "/admin/cas");
         }
     } catch (Exception $e) {
         session_start();
-        $_SESSION['mensagem'] = "Sector relacionada a um CAP";
+        $_SESSION['mensagem'] = "Sector relacionada a um Militante";
         $_SESSION['icone'] = "error";
-        header('Location:' . APP_URL . "/cas");
+        header('Location:' . APP_URL . "/admin/cas");
     }
 }

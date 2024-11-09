@@ -10,7 +10,7 @@ if (trim($comite) === "") {
     session_start();
     $_SESSION['mensagem'] = "Preencha o campo";
     $_SESSION['icone'] = "error";
-    header('Location:' . APP_URL . "/comites/create.php?id=" . $id_comite);
+    header('Location:' . APP_URL . "/admin/comites/create.php?id=" . $id_comite);
 }
 
 $sql = 'UPDATE tb_comites
@@ -32,10 +32,10 @@ if ($sentencia->execute()) {
     session_start();
     $_SESSION['mensagem'] = "Comité Atualizado";
     $_SESSION['icone'] = "success";
-    header('Location:' . APP_URL . "/comites");
+    header('Location:' . APP_URL . "/admin/comites");
 } else {
     session_start();
     $_SESSION['mensagem'] = "Comité Não Atualizado";
     $_SESSION['icone'] = "error";
-    header('Location:' . APP_URL . "/comites/update.php?id=" . $id_comite);
+    header('Location:' . APP_URL . "/admin/comites/update.php?id=" . $id_comite);
 }

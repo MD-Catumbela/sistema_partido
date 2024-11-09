@@ -26,19 +26,19 @@ if ($password_user === $password_repet) {
         if ($sentencia->execute()) {
             $_SESSION['mensagem'] = "Usuário Salvo";
             $_SESSION['icone'] = "success";
-            header('Location:' . APP_URL . "/usuarios");
+            header('Location:' . APP_URL . "/admin/usuarios");
         } else {
             $_SESSION['mensagem'] = "Usuário Não Salvo";
             $_SESSION['icone'] = "error";
-            header('Location:' . APP_URL . "/usuarios/create.php");
+            header('Location:' . APP_URL . "/admin/usuarios/create.php");
         }
     } catch (Exception $exception) {
         $_SESSION['mensagem'] = "Este Usuário já existe";
         $_SESSION['icone'] = "error";
-        header('Location:' . APP_URL . "/usuarios/create.php");
+        header('Location:' . APP_URL . "/admin/usuarios/create.php");
     }
 } else {
     $_SESSION['mensagem'] = "As senhas não são iguais";
     $_SESSION['icone'] = "error";
-    header('Location:' . APP_URL . "/usuarios/create.php");
+    header('Location:' . APP_URL . "/admin/usuarios/create.php");
 }

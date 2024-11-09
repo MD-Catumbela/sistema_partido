@@ -12,18 +12,18 @@ $sentencia->bindParam(':d_criacao', $data_hora);
 try {
     if ($sentencia->execute()) {
         session_start();
-        $_SESSION['mensagem'] = "funcao Salvo";
+        $_SESSION['mensagem'] = "Função Salvo";
         $_SESSION['icone'] = "success";
-        header('Location:' . APP_URL . "/funcoes");
+        header('Location:' . APP_URL . "/admin/funcoes");
     } else {
         session_start();
-        $_SESSION['mensagem'] = "funcao Não Salvo";
+        $_SESSION['mensagem'] = "Função Não Salvo";
         $_SESSION['icone'] = "error";
-        header('Location:' . APP_URL . "/funcoes/create.php");
+        header('Location:' . APP_URL . "/admin/funcoes/create.php");
     }
 } catch (Exception $exception) {
     session_start();
-    $_SESSION['mensagem'] = "Está funcao já existe";
+    $_SESSION['mensagem'] = "Está Função já existe";
     $_SESSION['icone'] = "error";
-    header('Location:' . APP_URL . "/funcoes/create.php");
+    header('Location:' . APP_URL . "/admin/funcoes/create.php");
 }

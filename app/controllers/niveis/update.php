@@ -8,7 +8,7 @@ if (trim($nivel) === "") {
     session_start();
     $_SESSION['mensagem'] = "Preencha o campo";
     $_SESSION['icone'] = "error";
-    header('Location:' . APP_URL . "/niveis/create.php?id=" . $id_nivel);
+    header('Location:' . APP_URL . "/admin/niveis/create.php?id=" . $id_nivel);
 }
 
 $sql = 'UPDATE tb_niveis
@@ -27,16 +27,16 @@ try {
         session_start();
         $_SESSION['mensagem'] = "Nível Atualizado";
         $_SESSION['icone'] = "success";
-        header('Location:' . APP_URL . "/niveis");
+        header('Location:' . APP_URL . "/admin/niveis");
     } else {
         session_start();
         $_SESSION['mensagem'] = "Nível Não Atualizado";
         $_SESSION['icone'] = "error";
-        header('Location:' . APP_URL . "/niveis/update.php?id=" . $id_nivel);
+        header('Location:' . APP_URL . "/admin/niveis/update.php?id=" . $id_nivel);
     }
 } catch (Exception $exception) {
     session_start();
     $_SESSION['mensagem'] = "Esta Nível já existe";
     $_SESSION['icone'] = "error";
-    header('Location:' . APP_URL . "/niveis/update.php?id=" . $id_nivel);
+    header('Location:' . APP_URL . "/admin/niveis/update.php?id=" . $id_nivel);
 }

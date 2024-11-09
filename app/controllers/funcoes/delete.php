@@ -9,19 +9,19 @@ if (isset($_GET['id'])) {
     try {
         if ($sentencia->execute()) {
             session_start();
-            $_SESSION['mensagem'] = "funcao Eliminado";
+            $_SESSION['mensagem'] = "Função Eliminado";
             $_SESSION['icone'] = "success";
-            header('Location:' . APP_URL . "/funcoes");
+            header('Location:' . APP_URL . "/admin/funcoes");
         } else {
             session_start();
-            $_SESSION['mensagem'] = "funcao Não Eliminado";
+            $_SESSION['mensagem'] = "Função Não Eliminado";
             $_SESSION['icone'] = "error";
-            header('Location:' . APP_URL . "/funcoes");
+            header('Location:' . APP_URL . "/admin/funcoes");
         }
     } catch (Exception $e) {
         session_start();
-        $_SESSION['mensagem'] = "funcao relacionada a um Usuário";
+        $_SESSION['mensagem'] = "Função relacionada a um Usuário";
         $_SESSION['icone'] = "error";
-        header('Location:' . APP_URL . "/funcoes");
+        header('Location:' . APP_URL . "/admin/funcoes");
     }
 }

@@ -11,17 +11,17 @@ if (isset($_GET['id'])) {
             session_start();
             $_SESSION['mensagem'] = "Nível Eliminado";
             $_SESSION['icone'] = "success";
-            header('Location:' . APP_URL . "/niveis");
+            header('Location:' . APP_URL . "/admin/niveis");
         } else {
             session_start();
             $_SESSION['mensagem'] = "Nível Não Eliminado";
             $_SESSION['icone'] = "error";
-            header('Location:' . APP_URL . "/niveis");
+            header('Location:' . APP_URL . "/admin/niveis");
         }
     } catch (Exception $e) {
         session_start();
         $_SESSION['mensagem'] = "Nível relacionada a um Usuário";
         $_SESSION['icone'] = "error";
-        header('Location:' . APP_URL . "/niveis");
+        header('Location:' . APP_URL . "/admin/niveis");
     }
 }

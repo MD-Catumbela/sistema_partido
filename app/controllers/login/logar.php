@@ -24,7 +24,7 @@ if (($contador > 0) && (password_verify($password_user, $password_user_tabela)))
     $_SESSION['session_username'] = $username;
     $_SESSION['mensagem'] = "Bem-vindo! " . $nome;
     $_SESSION['icone'] = "success";
-    header('Location:' . APP_URL . '/index.php');
+    header('Location:' . APP_URL . '/admin/index.php');
 } else {
     echo "Dados incorectos";
     session_start();

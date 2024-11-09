@@ -14,16 +14,16 @@ try {
         session_start();
         $_SESSION['mensagem'] = "Nível Salvo";
         $_SESSION['icone'] = "success";
-        header('Location:' . APP_URL . "/niveis");
+        header('Location:' . APP_URL . "/admin/niveis");
     } else {
         session_start();
         $_SESSION['mensagem'] = "Nível Não Salvo";
         $_SESSION['icone'] = "error";
-        header('Location:' . APP_URL . "/niveis/create.php");
+        header('Location:' . APP_URL . "/admin/niveis/create.php");
     }
 } catch (Exception $exception) {
     session_start();
     $_SESSION['mensagem'] = "Está Nível já existe";
     $_SESSION['icone'] = "error";
-    header('Location:' . APP_URL . "/niveis/create.php");
+    header('Location:' . APP_URL . "/admin/niveis/create.php");
 }

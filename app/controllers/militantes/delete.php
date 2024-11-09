@@ -10,10 +10,10 @@ if ($sentencia->execute()) {
     session_start();
     $_SESSION['mensagem'] = "Militante Eliminado";
     $_SESSION['icone'] = "success";
-    header('Location:' . APP_URL . "/militantes");
+    header('Location:' . APP_URL . "/admin/militantes");
 } else {
     session_start();
     $_SESSION['mensagem'] = "Militante Não Eliminado";
     $_SESSION['icone'] = "error";
-    header('Location:' . APP_URL . "/militantes/delete.php?id=".$id_militante);
+    header('Location:' . APP_URL . "/admin/militantes/delete.php?id=".$id_militante);
 }

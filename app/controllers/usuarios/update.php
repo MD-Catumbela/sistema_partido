@@ -12,7 +12,7 @@ if (trim($nome) === "") {
     session_start();
     $_SESSION['mensagem'] = "Preencha o campo";
     $_SESSION['icone'] = "error";
-    header('Location:' . APP_URL . "/usuarios/create.php?id=" . $id_usuario);
+    header('Location:' . APP_URL . "/admin/usuarios/create.php?id=" . $id_usuario);
 } else {
     if ($password_user !== "" && $password_user === $password_repet) {
         $password_user = password_hash($password_user, PASSWORD_DEFAULT); // Criptografar palavra passe
@@ -41,7 +41,7 @@ if (trim($nome) === "") {
         session_start();
         $_SESSION['mensagem'] = "As senhas não são iguais";
         $_SESSION['icone'] = "error";
-        header('Location:' . APP_URL . "/usuarios/update.php?id=" . $id_usuario);
+        header('Location:' . APP_URL . "/admin/usuarios/update.php?id=" . $id_usuario);
         exit();
     }
 
@@ -56,17 +56,17 @@ if (trim($nome) === "") {
             session_start();
             $_SESSION['mensagem'] = "Usuário Atualizado";
             $_SESSION['icone'] = "success";
-            header('Location:' . APP_URL . "/usuarios");
+            header('Location:' . APP_URL . "/admin/usuarios");
         } else {
             session_start();
             $_SESSION['mensagem'] = "Usuário Não Atualizado";
             $_SESSION['icone'] = "error";
-            header('Location:' . APP_URL . "/usuarios/update.php?id=" . $id_usuario);
+            header('Location:' . APP_URL . "/admin/usuarios/update.php?id=" . $id_usuario);
         }
     } catch (Exception $exception) {
         session_start();
         $_SESSION['mensagem'] = "Este Usuário já existe";
         $_SESSION['icone'] = "error";
-        header('Location:' . APP_URL . "/usuarios/update.php?id=" . $id_usuario);
+        header('Location:' . APP_URL . "/admin/usuarios/update.php?id=" . $id_usuario);
     }
 }

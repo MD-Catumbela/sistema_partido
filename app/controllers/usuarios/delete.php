@@ -13,11 +13,11 @@ if (isset($_GET['id'])) {
         session_start();
         $_SESSION['mensagem'] = "Usuário Eliminado";
         $_SESSION['icone'] = "success";
-        header('Location:' . APP_URL . "/usuarios");
+        header('Location:' . APP_URL . "/admin/usuarios");
     } else {
         session_start();
         $_SESSION['mensagem'] = "Usuário Não Eliminado";
         $_SESSION['icone'] = "error";
-        header('Location:' . APP_URL . "/usuarios");
+        header('Location:' . APP_URL . "/admin/usuarios");
     }
 }

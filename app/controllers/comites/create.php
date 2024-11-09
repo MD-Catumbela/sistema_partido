@@ -17,16 +17,16 @@ try {
         session_start();
         $_SESSION['mensagem'] = "Comité Salvo";
         $_SESSION['icone'] = "success";
-        header('Location:' . APP_URL . "/comites");
+        header('Location:' . APP_URL . "/admin/comites");
     } else {
         session_start();
         $_SESSION['mensagem'] = "Comité Não Salvo";
         $_SESSION['icone'] = "error";
-        header('Location:' . APP_URL . "/comites/create.php");
+        header('Location:' . APP_URL . "/admin/comites/create.php");
     }
 } catch (Exception $exception) {
     session_start();
     $_SESSION['mensagem'] = "Este Comité já existe";
     $_SESSION['icone'] = "error";
-    header('Location:' . APP_URL . "/comites/create.php");
+    header('Location:' . APP_URL . "/admin/comites/create.php");
 }
