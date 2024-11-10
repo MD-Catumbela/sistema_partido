@@ -48,7 +48,7 @@ include('../../app/controllers/comites/lista_comite.php');
                                 <div class="info-box mb-3">
                                     <img src="<?= APP_URL; ?>/public/img/nivel_seguranca.png" alt="JMPLA" class="brand-image img-circle elevation-3" style="opacity: .8, width: 110px; height: 100px;">
                                     <div class="info-box-content">
-                                    <span class="info-box-text">
+                                        <span class="info-box-text">
                                             <font style="vertical-align: inherit;">
                                                 <a href="<?= APP_URL; ?>/admin/funcoes" style="vertical-align: inherit;">Funções</a>
                                             </font>
@@ -116,13 +116,17 @@ include('../../app/controllers/comites/lista_comite.php');
                                                 <th>Município</th>
                                                 <th>Província</th>
                                                 <th>
-                                                <center>  Acções<center>
+                                                    <center> Acções<center>
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                             $contador = 0;
+                                            // ordem alfabetica
+                                            usort($dados_comites, function ($a, $b) {
+                                                return strcmp($a['comite'], $b['comite']);
+                                            });
                                             foreach ($dados_comites as $dado_comite) {
                                                 $id_comite = $dado_comite['id_comite']; ?>
                                                 <tr>

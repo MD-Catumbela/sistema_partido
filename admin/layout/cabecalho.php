@@ -108,6 +108,13 @@
                                 <p> <strong>Militantes</strong></p>
                             </a>
                         </li>
+                          <!-- Quotas -->
+                          <li class="nav-item">
+                            <a href="<?= APP_URL; ?>/admin/quotas" class="nav-link active bg-warning text-white">
+                                <i class="nav-icon fas fa-money-bill-alt"></i>
+                                <p> <strong>Quotas</strong></p>
+                            </a>
+                        </li>
                         <!-- TERMINAR SESSÃO -->
                         <li class="nav-item">
                             <a href="<?= APP_URL; ?>/app/controllers/login/terminar_sessao.php" class="nav-link" style="background-color: crimson; color: white;" onclick="confirmarSaida(); return false;">

@@ -35,6 +35,10 @@ include('../../app/controllers/cap/lista_cap.php');
                                     <tbody>
                                         <?php
                                         $contador = 0;
+                                          // ordem alfabetica
+                                          usort($dados_cap, function ($a, $b) {
+                                            return strcmp($a['comite'], $b['comite']);
+                                        });
                                         foreach ($dados_cap as $dado_cap) {
                                             $id_cap = $dado_cap['id_cap']; ?>
                                             <tr>

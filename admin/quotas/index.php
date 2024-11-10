@@ -14,15 +14,12 @@ include('../../app/controllers/militantes/lista_militantes.php');
                         <div class="card card-outline card-primary">
                             <div class="card-header">
                                 <h3 class="card-title"><b>Militantes</b></h3>
-                                <div class="card-tools">
-                                    <a href="create.php" class="btn btn-primary"><i class="nav-icon fas fa-user-friends"></i></i> Adicionar</a>
-                                </div>
                             </div>
                             <div class="card-body" style="display: block;">
                                 <table id="example1" class="table table-bordered table-striped table-sm">
                                     <thead>
                                         <tr>
-                                            <th>Nº Cartão</th>
+                                            <th>Comité</th>
                                             <th>Foto</th>
                                             <th>Nome</th>
                                             <th>CAP</th>
@@ -36,24 +33,21 @@ include('../../app/controllers/militantes/lista_militantes.php');
                                         <?php
                                           // ordem alfabetica
                                           usort($dados_militantes, function ($a, $b) {
-                                            return strcmp($a['nome_mi'], $b['nome_mi']);
+                                            return strcmp($a['comite'], $b['comite']);
                                         });
                                         foreach ($dados_militantes as $dado_militante) {
                                             $id_militante = $dado_militante['id_militante']; ?>
                                             <tr>
-                                                <td style="width: 10%;"><?= $dado_militante['n_cartao']; ?></td>
-                                                <td style="width: 5%;">
+                                                <td style="width: 20%;"><?= $dado_militante['comite']; ?></td>
+                                                <td style="width: 10%;">
                                                     <img src="<?= APP_URL . "/admin/militantes/img/" . $dado_militante['imagen']; ?>" width="40px" alt="">
                                                 </td>
                                                 <td style="width: 40%;"><?= $dado_militante['nome_mi']; ?></td>
-                                                <td style="width: 9%;"><?= $dado_militante['cap']; ?></td>
-                                                <td style="width: 9%;" class="<?= $classe; ?> text-center"><?= $dado_militante['cas']; ?></td>
-                                                <td style="width: 8%;text-align: center;">
+                                                <td style="width: 10%;"><?= $dado_militante['cap']; ?></td>
+                                                <td style="width: 10%;" class="<?= $classe; ?> text-center"><?= $dado_militante['cas']; ?></td>
+                                                <td style="width: 10%;text-align: center;">
                                                     <div class="btn-group">
-                                                        <a href="show.php?id=<?= $id_militante; ?>" class="btn btn-primary"><i class="fas fa-eye"></i></a>
-                                                        <a href="update.php?id=<?= $id_militante; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
-                                                        <a href="imprimir.php?id=<?= $id_militante; ?>" class="btn btn-dark"><i class="fas fa-print"></i></a>
-                                                        <a href="delete.php?id=<?= $id_militante; ?>" class="btn btn-danger "><i class="fas fa-trash-alt"></i></a>
+                                                        <a href="create.php?id=<?= $id_militante; ?>" class="btn btn-success"><i class="fas fa-money-bill-alt"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>

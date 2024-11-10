@@ -36,6 +36,10 @@ include('../../app/controllers/usuarios/lista_usuarios.php');
                                     <tbody>
                                         <?php
                                         $contador = 0;
+                                          // ordem alfabetica
+                                          usort($dados_usuarios, function ($a, $b) {
+                                            return strcmp($a['nome'], $b['nome']);
+                                        });
                                         foreach ($dados_usuarios as $dado_usuario) {
                                             $id_usuario = $dado_usuario['id_usuario']; ?>
                                             <tr>

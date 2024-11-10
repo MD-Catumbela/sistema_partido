@@ -35,6 +35,10 @@ include('../../app/controllers/niveis/lista_niveis.php');
                                     <tbody>
                                         <?php
                                         $contador = 0;
+                                          // ordem alfabetica
+                                          usort($dados_niveis, function ($a, $b) {
+                                            return strcmp($a['nivel'], $b['nivel']);
+                                        });
                                         foreach ($dados_niveis as $dado_nivel) {
                                             $id_nivel = $dado_nivel['id_nivel']; ?>
                                             <tr>

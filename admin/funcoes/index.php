@@ -34,6 +34,10 @@ include('../../app/controllers/funcoes/lista_funcoes.php');
                                     <tbody>
                                         <?php
                                         $contador = 0;
+                                          // ordem alfabetica
+                                          usort($dados_funcoes, function ($a, $b) {
+                                            return strcmp($a['funcao'], $b['funcao']);
+                                        });
                                         foreach ($dados_funcoes as $dado_funcao) {
                                             $id_funcao = $dado_funcao['id_funcao']; ?>
                                             <tr>

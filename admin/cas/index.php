@@ -35,6 +35,10 @@ include('../../app/controllers/cas/lista_cas.php');
                                     <tbody>
                                         <?php
                                         $contador = 0;
+                                          // ordem alfabetica
+                                          usort($dados_cas, function ($a, $b) {
+                                            return strcmp($a['comite'], $b['comite']);
+                                        });
                                         foreach ($dados_cas as $dado_cas) {
                                             $id_cas = $dado_cas['id_cas']; ?>
                                             <tr>

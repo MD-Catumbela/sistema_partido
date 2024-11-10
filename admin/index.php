@@ -38,6 +38,25 @@ include('../app/controllers/comites/lista_comite.php');
                                     </div>                                 
                                 </div>
                             </div>
+
+                            <div class="col-lg-4 col-6">
+                                <div class="small-box bg-dark">
+                                    <div class="inner">
+                                        <form method="POST" action="">
+                                            <label for="select_comite">Selecione o Comitê:</label>
+                                            <select id="select_comite" name="id_comite" class="form-control" onchange="this.form.submit()">
+                                                <option value="">Escolha um comitê</option>
+                                                <?php foreach ($dados_comites as $dado_comite): ?>
+                                                    <option value="<?= $dado_comite['id_comite'] ?>"
+                                                        <?= isset($_POST['id_comite']) && $_POST['id_comite'] == $dado_comite['id_comite'] ? 'selected' : '' ?>>
+                                                        <?= $dado_comite['comite'] ?>
+                                                    </option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </form>
+                                    </div>                                 
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
                             <!-- CAP -->
