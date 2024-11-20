@@ -11,12 +11,12 @@ $sentencia->bindParam(':d_criacao', $data_hora);
 
 if ($sentencia->execute()) {
     session_start();
-    $_SESSION['mensagem'] = "cas Salvo";
+    $_SESSION['mensagem'] = "Sector Salvo";
     $_SESSION['icone'] = "success";
     header('Location:' . APP_URL . "/admin/cas");
 } else {
     session_start();
-    $_SESSION['mensagem'] = "cas Não Salvo";
+    $_SESSION['mensagem'] = "Sector Não Salvo";
     $_SESSION['icone'] = "error";
     header('Location:' . APP_URL . "/admin/cas/create.php");
 }

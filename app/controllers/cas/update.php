@@ -12,12 +12,7 @@ if (trim($cas) === "") {
     header('Location:' . APP_URL . "/admin/cas/create.php?id=" . $id_cas);
 }
 
-$sql = 'UPDATE tb_cas
-                SET
-                    cas = :cas,
-                     id_comite = :id_comite,
-                    d_actualizacao = :d_actualizacao
-                WHERE id_cas = :id_cas';
+$sql = 'UPDATE tb_cas SET cas = :cas, id_comite = :id_comite, d_actualizacao = :d_actualizacao WHERE id_cas = :id_cas';
 $sentencia = $pdo->prepare($sql);
 
 $sentencia->bindParam(':cas', $cas);

@@ -18,7 +18,7 @@ include('../../app/controllers/comites/lista_comite.php');
                     <div class="content">
                         <div class="row">
                             <!-- MPLA-->
-                            <div class="col-12 col-sm-6 col-md-4">
+                            <div class="col-12 col-sm-6 col-md-6">
                                 <div class="info-box">
                                     <img src="<?= APP_URL; ?>/public/img/mpla.jpg" alt="JMPLA" class="brand-image img-circle elevation-3" style="opacity: .8, width: 100px; height: 100px;">
                                     <div class="info-box-content">
@@ -44,7 +44,7 @@ include('../../app/controllers/comites/lista_comite.php');
                                 </div>
                             </div>
                             <!-- FUNCÕES -->
-                            <div class="col-12 col-sm-6 col-md-4">
+                            <div class="col-12 col-sm-6 col-md-6">
                                 <div class="info-box mb-3">
                                     <img src="<?= APP_URL; ?>/public/img/nivel_seguranca.png" alt="JMPLA" class="brand-image img-circle elevation-3" style="opacity: .8, width: 110px; height: 100px;">
                                     <div class="info-box-content">
@@ -67,30 +67,7 @@ include('../../app/controllers/comites/lista_comite.php');
                                     </div>
                                 </div>
                             </div>
-                            <!-- NÍVEL -->
-                            <div class="col-12 col-sm-6 col-md-4">
-                                <div class="info-box mb-3">
-                                    <img src="<?= APP_URL; ?>/public/img/nivel_seguranca.png" alt="Nivel" class="brand-image img-circle elevation-3" style="opacity: .8, width: 110px; height: 100px;">
-                                    <div class="info-box-content">
-                                        <span class="info-box-text">
-                                            <font style="vertical-align: inherit;">
-                                                <a href="<?= APP_URL; ?>/admin/niveis" style="vertical-align: inherit;">Nível de Segurança</a>
-                                            </font>
-                                        </span>
-                                        <span class="info-box-number">
-                                            <?php
-                                            $contador_nivel = 0;
-                                            foreach ($dados_niveis as $dado_nivel) {
-                                                $contador_nivel = $contador_nivel + 1;
-                                            }
-                                            ?>
-                                            <font style="vertical-align: inherit;">
-                                                <font style="vertical-align: inherit;"><?= $contador_nivel ?></font>
-                                            </font>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>

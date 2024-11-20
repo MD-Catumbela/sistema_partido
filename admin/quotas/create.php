@@ -40,10 +40,10 @@ include('../../app/controllers/quotas/lista_militantes_pago.php');
                                         <?php
                                         $total_quota = 0;
                                         $contador = 0;
-
-
-                                       
-
+                                        // ordem alfabetica
+                                        usort($dados_quotas, function ($a, $b) {
+                                            return strcmp($a['data_pago'], $b['data_pago']);
+                                        });
                                         foreach ($dados_quotas as $dado_quota) {
                                             $id_quota = $dado_quota['id_quota'];
                                             $total_quota += $dado_quota['valor_pago'];
@@ -56,15 +56,14 @@ include('../../app/controllers/quotas/lista_militantes_pago.php');
                                                 <td style="width: 10%; text-align: center;">
                                                     <div class="btn-group">
                                                         <!-- Botão para abrir o modal de edição -->
-                                                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateModal"
+                                                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#updateModal"
                                                             data-id="<?= $id_quota; ?>"
                                                             data-mes="<?= $dado_quota['mes_pago']; ?>"
                                                             data-valor="<?= $dado_quota['valor_pago']; ?>"
                                                             data-data="<?= $dado_quota['data_pago']; ?>">
                                                             <i class="fas fa-edit"></i>
                                                         </button>
-                                                        <a href="imprimir.php?id=<?= $id_militante; ?>" class="btn btn-dark"><i class="fas fa-print"></i></a>
-                                                        <a href="javascript:void(0);" class="btn btn-danger" onclick="confirmDelete('<?= APP_URL; ?>/app/controllers/quotas/delete.php?id=<?= $id_quota; ?>')">
+                                                        <a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="confirmDelete('<?= APP_URL; ?>/app/controllers/quotas/delete.php?id=<?= $id_quota; ?>')">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </div>

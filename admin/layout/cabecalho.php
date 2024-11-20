@@ -80,13 +80,7 @@
                                 <p><strong>Comites</strong></p>
                             </a>
                         </li>
-                        <!-- FUNCÕES -->
-                        <li class="nav-item">
-                            <a href="<?= APP_URL; ?>/admin/funcoes" class="nav-link active bg-warning text-white">
-                                <i class="nav-icon fas fa-user-cog"></i>
-                                <p><strong>Funções</strong></p>
-                            </a>
-                        </li>
+                       
                         <!-- SECTORES -->
                         <li class="nav-item">
                             <a href="<?= APP_URL; ?>/admin/cas" class="nav-link active bg-warning text-white">
