@@ -20,7 +20,7 @@ include('../../app/controllers/comites/update_comite.php');
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="">Sector</label>
+                                                <label for="">Comité</label>
                                                 <input type="text" name="comite" class="form-control" value="<?= $comite; ?>" required>
                                             </div>
                                         </div>

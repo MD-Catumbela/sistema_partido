@@ -35,7 +35,6 @@ include('../../app/controllers/cas/lista_cas.php');
                                     <tbody>
                                         <?php
                                         $contador = 0;
-                                          // ordem alfabetica
                                           usort($dados_cas, function ($a, $b) {
                                             return strcmp($a['comite'], $b['comite']);
                                         });

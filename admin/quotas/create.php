@@ -40,7 +40,6 @@ include('../../app/controllers/quotas/lista_militantes_pago.php');
                                         <?php
                                         $total_quota = 0;
                                         $contador = 0;
-                                        // ordem alfabetica
                                         usort($dados_quotas, function ($a, $b) {
                                             return strcmp($a['data_pago'], $b['data_pago']);
                                         });

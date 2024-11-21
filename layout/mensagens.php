@@ -8,7 +8,7 @@ if ((isset($_SESSION['mensagem'])) && (isset($_SESSION['icone']))) {
             icon: "<?= $icone; ?>",
             title: "<?= $resposta; ?>",
             showConfirmButton: false,
-            timer: 4500
+            timer: 4000
         });
     </script>
 <?php

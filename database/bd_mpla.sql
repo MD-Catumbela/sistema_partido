@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/11/2024 às 19:03
+-- Tempo de geração: 21/11/2024 às 11:27
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -40,8 +40,9 @@ CREATE TABLE `tb_caps` (
 --
 
 INSERT INTO `tb_caps` (`id_cap`, `cap`, `id_comite`, `d_criacao`, `d_actualizacao`) VALUES
-(1, '121', 1, '2024-11-07 15:11:58', NULL),
-(2, '1', 6, '2024-11-07 15:12:14', NULL);
+(1, '120', 1, '2024-11-10 15:13:38', NULL),
+(3, '150', 1, '2024-11-20 23:05:20', NULL),
+(4, '124', 2, '2024-11-21 10:50:40', NULL);
 
 -- --------------------------------------------------------
 
@@ -62,8 +63,8 @@ CREATE TABLE `tb_cas` (
 --
 
 INSERT INTO `tb_cas` (`id_cas`, `cas`, `id_comite`, `d_criacao`, `d_actualizacao`) VALUES
-(1, 'SECTOR 1', 6, '2024-11-07 15:15:38', NULL),
-(2, 'SECTOR 3', 1, '2024-11-07 15:15:49', NULL);
+(1, 'SECTOR 1', 1, '2024-11-10 15:14:11', NULL),
+(2, 'SECTOR 2', 1, '2024-11-10 15:14:28', NULL);
 
 -- --------------------------------------------------------
 
@@ -149,7 +150,7 @@ CREATE TABLE `tb_militantes` (
 --
 
 INSERT INTO `tb_militantes` (`id_militante`, `nome_mi`, `nome_pai`, `nome_mae`, `genero`, `bi`, `d_nascimento`, `endereco`, `tel`, `n_academico`, `especialidade`, `trabalho`, `local_trabalho`, `organizacao`, `d_ingresso`, `n_cartao`, `id_cap`, `id_cas`, `id_funcao`, `id_usuario`, `id_comite`, `idade`, `anos`, `imagen`, `d_criacao`, `d_actualizacao`) VALUES
-(1, 'Maria Papagaio César', 'Fernando César', 'Luciana Kangole Lino César', 'F', '005638463BA045', '1998-02-20', 'Luongo - Rua Escola Lúcio Lara', 926598184, 'Licenciatura', 'Engermagem', 'Enfermeira', 'Hospital Municipal da Catumbela', 'JMPLA', '2020-04-01', '00010', 1, 2, 1, 1, 1, 26, 4, '2024-11-07-15-47-03__Maria.jpg', '2024-11-07 15:47:03', '2024-11-07 15:47:03');
+(1, 'Hunkuim Wilton César', 'Fernando César', 'Luciana Kangole Lino César', 'M', '000765003BA035', '1995-03-31', 'Luongo - Rua Escola Lúcio Lara', 923320645, 'Licenciatura', 'Engenharia Informática', 'Técnico de T.I', 'Cyber Fercesar', 'JMPLA', '2016-02-16', '0005', 1, 2, 1, 1, 1, 29, 8, NULL, '2024-11-21 00:45:03', '2024-11-21 00:45:03');
 
 -- --------------------------------------------------------
 
@@ -170,7 +171,41 @@ CREATE TABLE `tb_niveis` (
 
 INSERT INTO `tb_niveis` (`id_nivel`, `nivel`, `d_criacao`, `d_actualizacao`) VALUES
 (1, 'Administrador', '2024-06-17 10:31:41', '2024-11-04 12:12:01'),
-(3, 'Secretário', '2024-07-01 09:15:22', NULL);
+(3, 'Usuário Comum', '2024-07-01 09:15:22', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tb_quotas`
+--
+
+CREATE TABLE `tb_quotas` (
+  `id_quota` int(11) NOT NULL,
+  `mes_pago` varchar(50) NOT NULL,
+  `valor_pago` varchar(50) NOT NULL,
+  `data_pago` year(4) NOT NULL,
+  `id_militante` int(11) DEFAULT NULL,
+  `d_criacao` datetime DEFAULT current_timestamp(),
+  `d_actualizacao` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tb_quotas`
+--
+
+INSERT INTO `tb_quotas` (`id_quota`, `mes_pago`, `valor_pago`, `data_pago`, `id_militante`, `d_criacao`, `d_actualizacao`) VALUES
+(4, 'Janeiro', '1500', '2024', 1, '2024-11-21 11:21:39', '2024-11-21 11:21:39'),
+(5, 'Fevereiro', '1500', '2024', 1, '2024-11-21 11:24:48', '2024-11-21 11:24:48'),
+(6, 'Março', '1500', '2024', 1, '2024-11-21 11:24:48', '2024-11-21 11:24:48'),
+(7, 'Abril', '1500', '2024', 1, '2024-11-21 11:24:48', '2024-11-21 11:24:48'),
+(8, 'Maio', '1500', '2024', 1, '2024-11-21 11:24:48', '2024-11-21 11:24:48'),
+(9, 'Junho', '1500', '2024', 1, '2024-11-21 11:24:48', '2024-11-21 11:24:48'),
+(10, 'Julho', '1500', '2024', 1, '2024-11-21 11:24:48', '2024-11-21 11:24:48'),
+(11, 'Agosto', '1500', '2024', 1, '2024-11-21 11:24:48', '2024-11-21 11:24:48'),
+(12, 'Setembro', '1500', '2024', 1, '2024-11-21 11:24:48', '2024-11-21 11:24:48'),
+(13, 'Outubro', '1500', '2024', 1, '2024-11-21 11:24:48', '2024-11-21 11:24:48'),
+(14, 'Novembro', '1500', '2024', 1, '2024-11-21 11:24:48', '2024-11-21 11:24:48'),
+(15, 'Dezembro', '1500', '2024', 1, '2024-11-21 11:24:48', '2024-11-21 11:24:48');
 
 -- --------------------------------------------------------
 
@@ -194,7 +229,7 @@ CREATE TABLE `tb_usuarios` (
 
 INSERT INTO `tb_usuarios` (`id_usuario`, `nome`, `username`, `password_user`, `id_nivel`, `d_criacao`, `d_actualizacao`) VALUES
 (1, 'Mundo Digital', 'md', '$2y$10$3zhgWzJbAWStJXiFssACHuWSgAimY9C7nL3On.FW6F5tv/jN48aS6', 1, '2024-06-17 10:31:58', '2024-11-04 12:19:30'),
-(10, 'hunkuim wilton césar', 'hwc', '$2y$10$NDuQZuZ/zkXPJyjmb1.8KubrvzHaViU9sb2PmG2zes1TK1RbiwSeK', 3, '2024-11-04 21:11:30', NULL);
+(10, 'Hunkuim Wilton César', 'hwc', '$2y$10$1/AVb0GWFTJlSNLZJSrnEuO0VBp33EqJaMmZgcp4S9gO3WTH6NQe6', 3, '2024-11-04 21:11:30', '2024-11-10 14:37:54');
 
 --
 -- Índices para tabelas despejadas
@@ -247,6 +282,13 @@ ALTER TABLE `tb_niveis`
   ADD UNIQUE KEY `funcao` (`nivel`);
 
 --
+-- Índices de tabela `tb_quotas`
+--
+ALTER TABLE `tb_quotas`
+  ADD PRIMARY KEY (`id_quota`),
+  ADD KEY `id_militante` (`id_militante`);
+
+--
 -- Índices de tabela `tb_usuarios`
 --
 ALTER TABLE `tb_usuarios`
@@ -262,7 +304,7 @@ ALTER TABLE `tb_usuarios`
 -- AUTO_INCREMENT de tabela `tb_caps`
 --
 ALTER TABLE `tb_caps`
-  MODIFY `id_cap` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cap` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cas`
@@ -293,6 +335,12 @@ ALTER TABLE `tb_militantes`
 --
 ALTER TABLE `tb_niveis`
   MODIFY `id_nivel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT de tabela `tb_quotas`
+--
+ALTER TABLE `tb_quotas`
+  MODIFY `id_quota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de tabela `tb_usuarios`
@@ -327,6 +375,12 @@ ALTER TABLE `tb_militantes`
   ADD CONSTRAINT `tb_militantes_ibfk_7` FOREIGN KEY (`id_cas`) REFERENCES `tb_cas` (`id_cas`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
+-- Restrições para tabelas `tb_quotas`
+--
+ALTER TABLE `tb_quotas`
+  ADD CONSTRAINT `tb_quotas_ibfk_1` FOREIGN KEY (`id_militante`) REFERENCES `tb_militantes` (`id_militante`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
 -- Restrições para tabelas `tb_usuarios`
 --
 ALTER TABLE `tb_usuarios`
@@ -336,5 +390,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-

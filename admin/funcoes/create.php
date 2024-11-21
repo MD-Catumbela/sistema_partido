@@ -16,9 +16,9 @@ include('../../admin/layout/cabecalho.php');
                             <div class="card-body" style="display: block;">
                                 <form action="<?= APP_URL; ?>/app/controllers/funcoes/create.php" method="post">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="">Nome</label>
+                                                <label for="">Função</label>
                                                 <input type="text" name="funcao" class="form-control" required>
                                             </div>
                                         </div>

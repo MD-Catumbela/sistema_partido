@@ -1,11 +1,8 @@
 <?php
-
 $id_cas_get = $_GET['id'];
 
-$sql_cas = "SELECT *, cas.id_cas as id_cas, comite.id_comite as id_comite
-            FROM tb_cass as cas 
-            INNER JOIN tb_comites as comite ON cas.id_comite = comite.id_comite
-            WHERE cas.id_cas = '$id_cas_get'";
+$sql_cas = "SELECT *, cas.id_cas as id_cas, comite.id_comite as id_comite FROM tb_cass as cas 
+        INNER JOIN tb_comites as comite ON cas.id_comite = comite.id_comite WHERE cas.id_cas = '$id_cas_get'";
 
 $query_cas = $pdo->prepare($sql_cas);
 $query_cas->execute();

@@ -21,7 +21,7 @@ include('../../app/controllers/niveis/lista_niveis.php');
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="">Nome</label>
+                                                <label for="">Nome Completo</label>
                                                 <input type="text" name="nome" class="form-control" value="<?= $nome; ?>" required>
                                             </div>
                                         </div>
@@ -33,7 +33,7 @@ include('../../app/controllers/niveis/lista_niveis.php');
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="">Nível</label>
+                                                <label for="">Nível de Acesso</label>
                                                 <select name="nivel" id="" class="form-control">
                                                     <?php
                                                     foreach ($dados_niveis as $dado_nivel) {

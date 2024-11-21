@@ -22,7 +22,6 @@ include('../../admin/layout/cabecalho.php');
                                                 <input type="text" name="comite" class="form-control" required>
                                             </div>
                                         </div>
-
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="municipio">Município</label>

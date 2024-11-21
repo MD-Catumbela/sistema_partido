@@ -19,15 +19,15 @@ include('../../app/controllers/comites/lista_comite.php');
                                 <form action="<?= APP_URL; ?>/app/controllers/cap/update.php" method="post">
                                     <input type="text" name="id_cap" value="<?= $id_cap_get; ?>" hidden>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">CAP</label>
                                                 <input type="text" name="cap" class="form-control" value="<?= $cap; ?>" required>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="">Sector</label>
+                                                <label for="">Comité</label>
                                                 <div style="display:flex">
                                                     <select name="id_comite" id="" class="form-control">
                                                         <?php

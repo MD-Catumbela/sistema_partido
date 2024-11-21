@@ -35,7 +35,6 @@ include('../../app/controllers/cap/lista_cap.php');
                                     <tbody>
                                         <?php
                                         $contador = 0;
-                                          // ordem alfabetica
                                           usort($dados_cap, function ($a, $b) {
                                             return strcmp($a['comite'], $b['comite']);
                                         });

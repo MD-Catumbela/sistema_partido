@@ -3,8 +3,7 @@ include('../../config.php');
 $cap = $_POST['cap'];
 $id_comite = $_POST['id_comite'];
 
-$sentencia = $pdo->prepare('INSERT INTO tb_caps (cap,id_comite, d_criacao)
-                                VALUES (:cap,:id_comite, :d_criacao)');
+$sentencia = $pdo->prepare('INSERT INTO tb_caps (cap,id_comite, d_criacao) VALUES (:cap,:id_comite, :d_criacao)');
 
 $sentencia->bindParam(':cap', $cap);
 $sentencia->bindParam(':id_comite', $id_comite);

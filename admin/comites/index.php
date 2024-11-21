@@ -66,8 +66,7 @@ include('../../app/controllers/comites/lista_comite.php');
                                         </span>
                                     </div>
                                 </div>
-                            </div>
-                          
+                            </div>   
                         </div>
                     </div>
                 </div>

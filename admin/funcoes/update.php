@@ -18,9 +18,9 @@ include('../../app/controllers/funcoes/update_funcoes.php');
                                 <form action="<?= APP_URL; ?>/app/controllers/funcoes/update.php" method="post">
                                     <input type="text" name="id_funcao" value="<?= $id_funcao_get; ?>" hidden>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="">Nome</label>
+                                                <label for="">Função</label>
                                                 <input type="text" name="funcao" class="form-control" value="<?= $funcao; ?>" required>
                                             </div>
                                         </div>

@@ -6,7 +6,6 @@ if (!isset($_SESSION['session_username'])) {
 }
 
 $username_session = $_SESSION['session_username'];
-
 // Consulta para obter o nível do usuário
 $sql = "SELECT nivel FROM tb_usuarios AS us 
         INNER JOIN tb_niveis AS nivel ON us.id_nivel = nivel.id_nivel 

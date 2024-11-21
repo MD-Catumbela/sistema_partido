@@ -54,11 +54,11 @@
             <!-- FUNÇÃO -->
             <a href="<?= APP_URL; ?>" class="brand-link text-left" style="display: block;">
                 <span class="brand-text font-weight-light text-lg">
-                    <i class="fas fa-user"></i>  <b><?= $nome; ?></b>
+                    <i class="fas fa-user"></i> <b><?= $nome; ?></b>
                 </span>
                 <br>
                 <span class="brand-text font-weight-light text-lg">
-                    <i class="fas fa-lock"></i>  <b><?= $nivel; ?></b>
+                    <i class="fas fa-lock"></i> <b><?= $nivel; ?></b>
                 </span>
             </a>
             <!-- FIM FUNÇÃO -->
@@ -80,7 +80,6 @@
                                 <p><strong>Comites</strong></p>
                             </a>
                         </li>
-                       
                         <!-- SECTORES -->
                         <li class="nav-item">
                             <a href="<?= APP_URL; ?>/admin/cas" class="nav-link active bg-warning text-white">
@@ -102,8 +101,8 @@
                                 <p> <strong>Militantes</strong></p>
                             </a>
                         </li>
-                          <!-- Quotas -->
-                          <li class="nav-item">
+                        <!-- Quotas -->
+                        <li class="nav-item">
                             <a href="<?= APP_URL; ?>/admin/quotas" class="nav-link active bg-warning text-white">
                                 <i class="nav-icon fas fa-money-bill-alt"></i>
                                 <p> <strong>Quotas</strong></p>

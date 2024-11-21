@@ -34,7 +34,6 @@ include('../../app/controllers/militantes/lista_militantes.php');
                                     </thead>
                                     <tbody>
                                         <?php
-                                          // ordem alfabetica
                                           usort($dados_militantes, function ($a, $b) {
                                             return strcmp($a['nome_mi'], $b['nome_mi']);
                                         });

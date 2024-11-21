@@ -7,8 +7,7 @@ include('../app/config.php');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= APP_NAME; ?></title>
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="<?= APP_URL; ?>/public/css/fontsgoogleapis.css">
     <link rel="stylesheet" href="<?= APP_URL; ?>/public/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="<?= APP_URL; ?>/public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <link rel="stylesheet" href="<?= APP_URL; ?>/public/css/adminlte.min.css">
@@ -36,7 +35,7 @@ include('../app/config.php');
                     icon: "<?= $icone; ?>",
                     title: "<?= $resposta; ?>",
                     showConfirmButton: false,
-                    timer: 4500
+                    timer: 4000
                 });
             </script>
         <?php

@@ -11,14 +11,14 @@ include('../../admin/layout/cabecalho.php');
                     <div class="col-md">
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title"><b>Adicionar Nível</b></h3>
+                                <h3 class="card-title"><b>Adicionar Nível de Acesso</b></h3>
                             </div>
                             <div class="card-body" style="display: block;">
                                 <form action="<?= APP_URL; ?>/app/controllers/niveis/create.php" method="post">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="">Nome</label>
+                                                <label for="">Nível de Acesso</label>
                                                 <input type="text" name="nivel" class="form-control" required>
                                             </div>
                                         </div>

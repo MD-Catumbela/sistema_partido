@@ -45,7 +45,7 @@ include('../../app/controllers/niveis/lista_niveis.php');
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="">Nível</label>
+                                                <label for="">Nível de Acesso</label>
                                                 <div style="display:flex">
                                                     <select name="nivel" id="" class="form-control">
                                                         <?php

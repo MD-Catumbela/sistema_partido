@@ -13,7 +13,7 @@ include('../../app/controllers/niveis/lista_niveis.php');
                     <div class="col-md-12">
                         <div class="card card-outline card-primary">
                             <div class="card-header">
-                                <h3 class="card-title"><b>Níveis</b></h3>
+                                <h3 class="card-title"><b>Níveis de Acesso</b></h3>
 
                                 <div class="card-tools">
                                     <a href="create.php" class="btn btn-primary"><i class="fas fa-user-tag"></i> Adicionar</a>
@@ -26,7 +26,7 @@ include('../../app/controllers/niveis/lista_niveis.php');
                                             <th>
                                                 <center>Nº <center>
                                             </th>
-                                            <th>Nível</th>
+                                            <th>Nível de Acesso</th>
                                             <th>
                                                 <center>Acções</center>
                                             </th>
@@ -35,7 +35,6 @@ include('../../app/controllers/niveis/lista_niveis.php');
                                     <tbody>
                                         <?php
                                         $contador = 0;
-                                          // ordem alfabetica
                                           usort($dados_niveis, function ($a, $b) {
                                             return strcmp($a['nivel'], $b['nivel']);
                                         });
@@ -50,7 +49,6 @@ include('../../app/controllers/niveis/lista_niveis.php');
                                                         <a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="confirmDelete('<?= APP_URL; ?>/app/controllers/niveis/delete.php?id=<?= $id_nivel; ?>')">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
-
                                                     </div>
                                                 </td>
                                             </tr>

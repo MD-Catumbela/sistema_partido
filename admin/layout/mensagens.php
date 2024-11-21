@@ -1,5 +1,4 @@
 <?php
-
 if ((isset($_SESSION['mensagem'])) && (isset($_SESSION['icone']))) {
     $resposta = $_SESSION['mensagem'];
     $icone = $_SESSION['icone']; ?>

@@ -17,7 +17,6 @@ $pdf->setPrintFooter(false);
 // Configurações de margem
 $pdf->SetMargins(10, 10, 10);
 $pdf->AddPage();
-
 // HTML do Relatório
 $html = '
 <h1 style="text-align: center; color: #333;">Ficha de Militante</h1>

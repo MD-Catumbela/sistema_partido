@@ -10,7 +10,6 @@ include('../app/controllers/funcoes/lista_funcoes.php');
 include('../app/controllers/militantes/lista_militantes.php');
 include('../app/controllers/comites/lista_comite.php');
 ?>
-<!-- CORPO DO CODIGO -->
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
@@ -559,7 +558,6 @@ include('../app/controllers/comites/lista_comite.php');
         </div>
     </div>
 </div>
-<!-- FIM CORPO DO CODIGO -->
 <?php
 include('../layout/mensagens.php');
 include('../admin/layout/rodape.php');

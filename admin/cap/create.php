@@ -17,13 +17,13 @@ include('../../app/controllers/comites/lista_comite.php');
                             <div class="card-body" style="display: block;">
                                 <form action="<?= APP_URL; ?>/app/controllers/cap/create.php" method="post">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">CAP</label>
                                                 <input type="text" name="cap" class="form-control" required>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Comité</label>
                                                 <div style="display:flex">

@@ -129,8 +129,8 @@ include('../../app/controllers/funcoes/lista_funcoes.php');
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- DADOS DO PARTIDO -->
                                     <hr>
+                                    <!-- DADOS DO PARTIDO -->                                 
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row">

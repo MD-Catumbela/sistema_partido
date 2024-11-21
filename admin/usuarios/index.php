@@ -27,7 +27,7 @@ include('../../app/controllers/usuarios/lista_usuarios.php');
                                             </th>
                                             <th>Nome Completo</th>
                                             <th>Usuário</th>
-                                            <th>Nível</th>
+                                            <th>Nível de Acesso</th>
                                             <th>
                                                 <center>Acções</center>
                                             </th>

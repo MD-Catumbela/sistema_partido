@@ -150,8 +150,8 @@ include('../../app/controllers/funcoes/lista_funcoes.php');
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- DADOS DO PARTIDO -->
                                     <hr>
+                                    <!-- DADOS DO PARTIDO -->
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row">
@@ -251,11 +251,9 @@ include('../../app/controllers/funcoes/lista_funcoes.php');
                                                         <input type="text" name="n_cartao" class="form-control" value="<?= $n_cartao; ?>">
                                                     </div>
                                                 </div>
-                                              
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
